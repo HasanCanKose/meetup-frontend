@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { EventDetailComponent } from './event-detail/event-detail.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [EventDetailComponent],
   imports: [
     CommonModule
   ]
