@@ -1,0 +1,14 @@
+.btn {
+  background-color: #ff4500;
+  border: none;
+  outline: none;
+}
+.btn:hover {
+  background-color: #fa551a;
+  cursor: pointer;
+}
+.btn:active {
+  background-color: #ff4500;
+  border: none;
+  outline: none;
+}
