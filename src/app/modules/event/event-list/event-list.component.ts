@@ -16,4 +16,7 @@ export class EventListComponent implements OnInit {
     this.events = this.eventsService.getEventCards()
   }
 
+  onClick() {
+    console.log("Button click");
+  }
 }

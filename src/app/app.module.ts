@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import {SharedModule} from './modules/shared/shared.module';
 import {AppRoutingModule} from './app-routing.module';
 import {EventModule} from './modules/event/event.module';
+import {ButtonComponent} from './modules/shared/button/button.component';
 
 @NgModule({
   declarations: [
