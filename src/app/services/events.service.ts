@@ -10,38 +10,40 @@ export class EventsServices {
       id: 1,
       name: 'Event1',
       definition: 'Content',
+      place: 'Istanbul',
+      date: '29.12.2020',
       showContent: false,
     },
-    {
-      id: 2,
-      name: 'Event2',
-      definition: 'Content',
-      showContent: false,
-    },
-    {
-      id: 3,
-      name: 'Event3',
-      definition: 'Content',
-      showContent: false,
-    },
-    {
-      id: 4,
-      name: 'Event4',
-      definition: 'Content',
-      showContent: false,
-    },
-    {
-      id: 5,
-      name: 'Event5',
-      definition: 'Content',
-      showContent: false,
-    },
-    {
-      id: 6,
-      name: 'Event6',
-      definition: 'Content',
-      showContent: false,
-    },
+    // {
+    //   id: 2,
+    //   name: 'Event2',
+    //   definition: 'Content',
+    //   showContent: false,
+    // },
+    // {
+    //   id: 3,
+    //   name: 'Event3',
+    //   definition: 'Content',
+    //   showContent: false,
+    // },
+    // {
+    //   id: 4,
+    //   name: 'Event4',
+    //   definition: 'Content',
+    //   showContent: false,
+    // },
+    // {
+    //   id: 5,
+    //   name: 'Event5',
+    //   definition: 'Content',
+    //   showContent: false,
+    // },
+    // {
+    //   id: 6,
+    //   name: 'Event6',
+    //   definition: 'Content',
+    //   showContent: false,
+    // },
   ];
 
   public getEventCards() {
