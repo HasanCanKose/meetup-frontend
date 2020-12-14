@@ -13,7 +13,7 @@ export class EventListComponent implements OnInit {
   constructor(private eventsService: EventsServices) { }
 
   ngOnInit(): void {
-    this.events = this.eventsService.EventCards()
+    this.events = this.eventsService.getEventCards()
   }
 
 }

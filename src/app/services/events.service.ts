@@ -44,7 +44,7 @@ export class EventsServices {
     },
   ];
 
-  public EventCards() {
+  public getEventCards() {
     return this.eventCards.slice();
   }
 }
