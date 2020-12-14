@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {EventsServices} from '../../../services/events.service';
+import {EventCard} from '../event-card';
 
 @Component({
   selector: 'app-event-list',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit {
+  public events: Array<EventCard> = [];
 
-  constructor() { }
+  constructor(private eventsService: EventsServices) { }
 
   ngOnInit(): void {
+    this.events = this.eventsService.EventCards()
   }
 
 }
