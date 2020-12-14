@@ -1,1 +1,13 @@
-<p>event-list works!</p>
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <ul *ngFor="let event of events">
+        <li class="list-item">
+          <h3>{{ event.name }}</h3>
+          <hr />
+          <p>{{ event.definition }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
