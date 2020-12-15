@@ -2,15 +2,17 @@
   <div class="container">
       <div class="card">
         <ul *ngFor="let event of events">
-
           <li class="list-item">
             <div class="circle-image">
               <img src="https://www.aal-europe.eu/wp-content/uploads/2013/04/events_medium.jpg" alt="">
             </div>
             <div class="info">
-            <h1>{{ event.name }}</h1>
-            <hr />
-            <h3>{{ event.definition }}</h3>
+              <h1>{{ event.name }}</h1>
+              <hr />
+              <h2>{{ event.definition }}</h2>
+              <hr>
+              <h3>{{event.place}}</h3>
+              <h3>{{event.date}}</h3>
             </div>
             <app-button (buttonClick)="onClick()">Details</app-button>
           </li>

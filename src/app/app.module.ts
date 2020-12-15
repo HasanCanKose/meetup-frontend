@@ -8,12 +8,13 @@ import {SharedModule} from './modules/shared/shared.module';
 import {AppRoutingModule} from './app-routing.module';
 import {EventModule} from './modules/event/event.module';
 import {ButtonComponent} from './modules/shared/button/button.component';
+import {EventListComponent} from './modules/event/event-list/event-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

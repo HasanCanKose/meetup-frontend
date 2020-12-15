@@ -7,12 +7,12 @@ import {EventCard} from '../event-card';
   templateUrl: './event-list.component.html',
   styleUrls: ['./event-list.component.css']
 })
-export class EventListComponent implements OnInit {
+export class EventListComponent implements OnInit{
   public events: Array<EventCard> = [];
 
   constructor(private eventsService: EventsServices) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.events = this.eventsService.getEventCards()
   }
 
