@@ -8,13 +8,27 @@ export class EventCardAnimationDirective {
   @HostBinding('style.transition') cardTransition;
 
   @HostListener('mousemove', ['$event']) onMouseMove(e) {
-    let xAxis = (window.innerWidth / 2 - e.pageX) / 50;
-    let yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+
+    let x = e.pageX;
+    let y = e.pageY;
+    if(x<420 || x < 850){
+      x += 200;
+    }
+    if(y<250){
+      y += 200;
+    }
+    if(y>800){
+      y/=y;
+    }
+    let xAxis = (window.innerWidth / 2 - x) / 75;
+    let yAxis = (window.innerHeight / 2 - y) / 75;
+    console.log("X", e.pageX);
+    console.log("Y",e.pageY);
     this.cardTransform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
   }
 
   @HostListener('mouseenter') onMouseEnter(e) {
-    this.cardTransition = 'none';
+    this.cardTransition = 'all 0.2s ease';
   }
 
   @HostListener('mouseleave') onMouseLeave(e) {
