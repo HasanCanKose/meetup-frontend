@@ -7,6 +7,7 @@ export class EventCardAnimationDirective {
   @HostBinding('style.transform') cardTransform;
   @HostBinding('style.transition') cardTransition;
 
+
   @HostListener('mousemove', ['$event']) onMouseMove(e) {
 
     let x = e.pageX;
