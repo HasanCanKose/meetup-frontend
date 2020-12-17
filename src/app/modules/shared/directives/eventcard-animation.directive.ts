@@ -40,8 +40,6 @@ export class EventCardAnimationDirective implements AfterViewInit{
     }
     let xAxis = (window.innerWidth / 2 - x) / 75;
     let yAxis = (window.innerHeight / 2 - y) / 75;
-    console.log("X", e.pageX);
-    console.log("Y",e.pageY);
     this.cardTransform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
   }
 
