@@ -29,14 +29,14 @@ export class EventCardAnimationDirective implements AfterViewInit{
 
     let x = e.pageX;
     let y = e.pageY;
-    if(x<420 || x < 850){
+    if(x < 850){
       x += 200;
     }
     if(y<250){
       y += 200;
     }
     if(y>800){
-      y/=y;
+      y=400 + (y / 10);
     }
     let xAxis = (window.innerWidth / 2 - x) / 75;
     let yAxis = (window.innerHeight / 2 - y) / 75;
