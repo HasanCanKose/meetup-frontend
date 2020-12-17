@@ -1,9 +1,26 @@
-import { Directive, HostBinding, HostListener } from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, HostBinding, HostListener, Renderer2} from '@angular/core';
 
 @Directive({
   selector: '[eventCardAnimation]',
 })
-export class EventCardAnimationDirective {
+export class EventCardAnimationDirective implements AfterViewInit{
+
+  img;
+  infoUp;
+  infoDown;
+  appButton;
+
+
+  constructor(private renderer: Renderer2, private el: ElementRef) {
+  }
+
+  ngAfterViewInit() {
+    this.img = this.el.nativeElement.querySelector('img');
+    this.infoUp = this.el.nativeElement.querySelector('.info-up');
+    this.infoDown = this.el.nativeElement.querySelector('.info-bottom');
+    this.appButton = this.el.nativeElement.querySelector('app-button')
+  }
+
   @HostBinding('style.transform') cardTransform;
   @HostBinding('style.transition') cardTransition;
 
@@ -30,10 +47,21 @@ export class EventCardAnimationDirective {
 
   @HostListener('mouseenter') onMouseEnter(e) {
     this.cardTransition = 'all 0.2s ease';
+    this.renderer.addClass(this.img, 'info-animation')
+    this.renderer.addClass(this.infoUp, 'info-animation');
+    this.renderer.addClass(this.infoDown, 'info-animation');
+    this.renderer.addClass(this.appButton, 'info-animation');
   }
 
   @HostListener('mouseleave') onMouseLeave(e) {
     this.cardTransition = 'all 0.5s ease';
     this.cardTransform = `rotateY(0deg) rotateX(0deg)`;
+    this.renderer.removeClass(this.img, 'info-animation')
+    this.renderer.removeClass(this.infoUp, 'info-animation');
+    this.renderer.removeClass(this.infoDown, 'info-animation');
+    this.renderer.removeClass(this.appButton, 'info-animation');
+
   }
+
+
 }
