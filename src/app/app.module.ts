@@ -9,12 +9,14 @@ import {AppRoutingModule} from './app-routing.module';
 import {EventModule} from './modules/event/event.module';
 import {ButtonComponent} from './modules/shared/button/button.component';
 import {EventListComponent} from './modules/event/event-list/event-list.component';
+import { LoginComponent } from './components/login/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
