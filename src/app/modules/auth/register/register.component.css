@@ -8,7 +8,7 @@
   font-family: sans-serif;
 }
 
-.form-email, .form-password, .form-first-name, .form-last-name, .form-confirm-password{
+.form-email, .form-password, .form-first-name, .form-last-name, .form-confirm-password, .form-username{
   width: 30%;
   position: relative;
   height: 50px;
@@ -16,7 +16,7 @@
   margin-top: 10px;
 }
 
-.form-email input, .form-password input, .form-first-name input, .form-last-name input, .form-confirm-password input{
+.form-email input, .form-password input, .form-first-name input, .form-last-name input, .form-confirm-password input, .form-username input{
   width: 100%;
   height: 100%;
   padding-top: 20px;
@@ -24,7 +24,7 @@
   outline: none;
 }
 
-.form-email label, .form-password label, .form-first-name label, .form-last-name label, .form-confirm-password label{
+.form-email label, .form-password label, .form-first-name label, .form-last-name label, .form-confirm-password label, .form-username label{
   position: absolute;
   bottom: 0;
   left: 0;
@@ -34,7 +34,7 @@
   border-bottom: 1px solid black;
 }
 
-.form-email label::after, .form-password label::after, .form-first-name label::after, .form-last-name label::after, .form-confirm-password label::after{
+.form-email label::after, .form-password label::after, .form-first-name label::after, .form-last-name label::after, .form-confirm-password label::after, .form-username label::after{
   content: "";
   position: absolute;
   bottom: -1px;
@@ -46,7 +46,7 @@
   transition: transform 0.3s ease;
 }
 
-.content-email, .content-password, .content-first-name, .content-last-name, .content-confirm-password{
+.content-email, .content-password, .content-first-name, .content-last-name, .content-confirm-password, .content-username{
   position: absolute;
   bottom: 5px;
   left: 0;
@@ -63,7 +63,9 @@
 .form-last-name input:focus + .label-last-name .content-last-name,
 .form-last-name input.ng-valid + .label-last-name .content-last-name,
 .form-confirm-password input:focus + .label-confirm-password .content-confirm-password,
-.form-confirm-password input.ng-valid + .label-confirm-password .content-confirm-password{
+.form-confirm-password input.ng-valid + .label-confirm-password .content-confirm-password,
+.form-username input:focus + .label-username .content-username,
+.form-username input.ng-valid + .label-username .content-username{
   transform: translateY(-22px);
   font-size: 14px;
   color: #5fa8d3;
@@ -79,7 +81,9 @@
 .form-last-name input:focus + .label-last-name::after,
 .form-last-name input.ng-valid + .label-last-name::after,
 .form-confirm-password input:focus + .label-confirm-password::after,
-.form-confirm-password input.ng-valid + .label-confirm-password::after{
+.form-confirm-password input.ng-valid + .label-confirm-password::after,
+.form-username input:focus + .label-username::after,
+.form-username input.ng-valid + .label-username::after{
   transform: translateX(0%);
 }
 
