@@ -1,1 +1,33 @@
-<p>login works!</p>
+<div class="wrapper">
+
+  <div class="form-wrapper">
+    <div class="login-card">
+      <h1>Login</h1>
+      <form>
+        <div class="form-email">
+          <input type="text" id="email" name="email" autocomplete="off" required>
+          <label for="email" class="label-email">
+            <span class="content-email">Email</span>
+          </label>
+        </div>
+        <div class="form-password">
+          <input type="text" id="password" name="password" autocomplete="off" required>
+          <label for="password" class="label-password">
+            <span class="content-password">Password</span>
+          </label>
+        </div>
+        <div class="form-button">
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="register-wrapper">
+    <div class="register-card">
+      <h1>Not Registered Yet?</h1>
+      <h3>Register Now!</h3>
+      <button class="btn btn-primary" type="button" (click)="onClick()">Register</button>
+    </div>
+  </div>
+</div>
+
