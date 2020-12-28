@@ -3,15 +3,15 @@
   <div class="form-wrapper">
     <div class="login-card">
       <h1>Login</h1>
-      <form>
-        <div class="form-email">
-          <input type="text" id="email" name="email" autocomplete="off" required>
-          <label for="email" class="label-email">
-            <span class="content-email">Email</span>
+      <form [formGroup]="loginForm">
+        <div class="form-username">
+          <input type="text" id="username" name="username" autocomplete="off" formControlName="username">
+          <label for="username" class="label-username">
+            <span class="content-username">Username</span>
           </label>
         </div>
         <div class="form-password">
-          <input type="text" id="password" name="password" autocomplete="off" required>
+          <input type="text" id="password" name="password" autocomplete="off" formControlName="password">
           <label for="password" class="label-password">
             <span class="content-password">Password</span>
           </label>

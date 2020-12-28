@@ -21,7 +21,7 @@
   border-radius: 16px;
 
 }
-.form-email, .form-password{
+.form-username, .form-password{
   width: 100%;
   position: relative;
   height: 50px;
@@ -29,7 +29,7 @@
   margin-top: 10px;
 }
 
-.form-email input, .form-password input{
+.form-username input, .form-password input{
   width: 100%;
   height: 100%;
   padding-top: 25px;
@@ -38,7 +38,7 @@
   font-size: 16px;
 }
 
-.form-email label, .form-password label{
+.form-username label, .form-password label{
   position: absolute;
   bottom: 0;
   left: 0;
@@ -48,7 +48,7 @@
   border-bottom: 1px solid black;
 }
 
-.form-email label::after, .form-password label::after{
+.form-username label::after, .form-password label::after{
   content: "";
   position: absolute;
   bottom: -3px;
@@ -59,26 +59,26 @@
   transform: translateX(-100%);
   transition: transform 0.3s ease;
 }
-.content-email, .content-password{
+.content-username, .content-password{
   position: absolute;
   bottom: 5px;
   left: 0;
   transition: all 0.3s ease;
 }
 
-.form-email input:focus + .label-email .content-email,
-.form-email input:valid + .label-email .content-email,
+.form-username input:focus + .label-username .content-username,
+.form-username input.ng-valid + .label-username .content-username,
 .form-password input:focus + .label-password .content-password,
-.form-password input:valid + .label-password .content-password{
+.form-password input.ng-valid + .label-password .content-password{
   transform: translateY(-22px);
   font-size: 14px;
   color: #5fa8d3;
 }
 
-.form-email input:focus + .label-email::after,
-.form-email input:valid + .label-email::after,
+.form-username input:focus + .label-username::after,
+.form-username input.ng-valid + .label-username::after,
 .form-password input:focus + .label-password::after,
-.form-password input:valid + .label-password::after{
+.form-password input.ng-valid + .label-password::after{
   transform: translateX(0%);
 }
 .register-wrapper{
