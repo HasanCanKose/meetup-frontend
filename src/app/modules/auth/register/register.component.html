@@ -1,4 +1,4 @@
-<form [formGroup]="registerForm">
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
   <div class="form-wrapper">
     <h1>Register</h1>
 
@@ -21,6 +21,7 @@
         <span class="content-email">Email</span>
       </label>
     </div>
+<!--    <span *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched"  class="help-block">Please enter a valid e-mail!</span>-->
     <div class="form-password">
       <input type="text" id="password" name="password" autocomplete="off" formControlName="password">
       <label for="password" class="label-password">

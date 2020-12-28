@@ -53,32 +53,37 @@
 }
 
 .form-email input:focus + .label-email .content-email,
-.form-email input:valid + .label-email .content-email,
+.form-email input.ng-valid + .label-email .content-email,
 .form-password input:focus + .label-password .content-password,
-.form-password input:valid + .label-password .content-password,
+.form-password input.ng-valid + .label-password .content-password,
 .form-first-name input:focus + .label-first-name .content-first-name,
-.form-first-name input:valid + .label-first-name .content-first-name,
+.form-first-name input.ng-valid + .label-first-name .content-first-name,
 .form-last-name input:focus + .label-last-name .content-last-name,
-.form-last-name input:valid + .label-last-name .content-last-name,
+.form-last-name input.ng-valid + .label-last-name .content-last-name,
 .form-confirm-password input:focus + .label-confirm-password .content-confirm-password,
-.form-confirm-password input:valid + .label-confirm-password .content-confirm-password{
+.form-confirm-password input.ng-valid + .label-confirm-password .content-confirm-password{
   transform: translateY(-22px);
   font-size: 14px;
   color: #5fa8d3;
 }
 
 .form-email input:focus + .label-email::after,
-.form-email input:valid + .label-email::after,
+.form-email input.ng-valid + .label-email::after,
 .form-password input:focus + .label-password::after,
-.form-password input:valid + .label-password::after,
+.form-password input.ng-valid + .label-password::after,
 .form-first-name input:focus + .label-first-name::after,
-.form-first-name input:valid + .label-first-name::after,
+.form-first-name input.ng-valid + .label-first-name::after,
 .form-last-name input:focus + .label-last-name::after,
-.form-last-name input:valid + .label-last-name::after,
+.form-last-name input.ng-valid + .label-last-name::after,
 .form-confirm-password input:focus + .label-confirm-password::after,
-.form-confirm-password input:valid + .label-confirm-password::after{
+.form-confirm-password input.ng-valid + .label-confirm-password::after{
   transform: translateX(0%);
 }
+
+
+/*.form-first-name input.ng-valid + .label::after{*/
+/*  transform: translateX(0%);*/
+/*}*/
 
 .form-button button{
   margin-top: 10px;
