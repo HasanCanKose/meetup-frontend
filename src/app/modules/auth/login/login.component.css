@@ -1,0 +1,106 @@
+.wrapper{
+  display: grid;
+  grid-template-columns: 50% 40%;
+  grid-gap: 20px;
+  margin-top: 30px;
+}
+
+.form-wrapper{
+  width: 56vw;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+.login-card{
+  width: 50%;
+  padding: 80px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+
+}
+.form-email, .form-password{
+  width: 100%;
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.form-email input, .form-password input{
+  width: 100%;
+  height: 100%;
+  padding-top: 25px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.form-email label, .form-password label{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid black;
+}
+
+.form-email label::after, .form-password label::after{
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #5fa8d3;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.content-email, .content-password{
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.form-email input:focus + .label-email .content-email,
+.form-email input:valid + .label-email .content-email,
+.form-password input:focus + .label-password .content-password,
+.form-password input:valid + .label-password .content-password{
+  transform: translateY(-22px);
+  font-size: 14px;
+  color: #5fa8d3;
+}
+
+.form-email input:focus + .label-email::after,
+.form-email input:valid + .label-email::after,
+.form-password input:focus + .label-password::after,
+.form-password input:valid + .label-password::after{
+  transform: translateX(0%);
+}
+.register-wrapper{
+  display: grid;
+  align-items: center;
+  justify-items: left;
+}
+.register-card{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  border-radius: 16px;
+  background: rgb(251,195,63);
+  background: radial-gradient(circle, rgba(251,195,63,0.23853291316526615) 49%, rgba(70,83,252,0.17690826330532217) 100%);
+}
+
+.btn{
+  margin-top: 10px;
+  padding: 8px 32px;
+  font-size: 16px;
+}

@@ -8,6 +8,7 @@ import {SharedModule} from './modules/shared/shared.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AuthModule} from './modules/auth/auth.module';
 import {EventModule} from './modules/event/event.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {EventModule} from './modules/event/event.module';
   imports: [
     BrowserModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
