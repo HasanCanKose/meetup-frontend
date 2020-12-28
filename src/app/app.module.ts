@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import {SharedModule} from './modules/shared/shared.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AuthModule} from './modules/auth/auth.module';
+import {EventModule} from './modules/event/event.module';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,7 @@ import {AuthModule} from './modules/auth/auth.module';
   imports: [
     BrowserModule,
     SharedModule,
-    AppRoutingModule,
-    AuthModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
