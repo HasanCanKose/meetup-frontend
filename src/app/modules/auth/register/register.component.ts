@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UserService} from '../../../services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
@@ -24,6 +25,15 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.registerForm);
+    let request = {
+      name: this.registerForm.get('firstname').value,
+      surname: this.registerForm.get('lastname').value,
+      userName: this.registerForm.get('username').value,
+      email: this.registerForm.get('email').value,
+      password: this.registerForm.get('password').value,
+    }
+    if(this.registerForm.get('password').value === this.registerForm.get('confirmPassword').value) {
+      this.userService.userRegister(request).subscribe(data => console.log(data));
+    }
   }
 }
