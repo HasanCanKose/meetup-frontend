@@ -8,6 +8,6 @@ export class AuthService {
   }
 
   public userAuthentication(request){
-    return this.http.post("http://localhost:9192/authenticate", request, {responseType: 'text' as 'json'})
+    return this.http.post("http://localhost:8080/authenticate", request, {responseType: 'text' as 'json'})
   }
 }

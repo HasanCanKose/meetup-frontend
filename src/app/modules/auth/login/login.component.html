@@ -3,7 +3,7 @@
   <div class="form-wrapper">
     <div class="login-card">
       <h1>Login</h1>
-      <form [formGroup]="loginForm">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-username">
           <input type="text" id="username" name="username" autocomplete="off" formControlName="username">
           <label for="username" class="label-username">
