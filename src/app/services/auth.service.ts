@@ -7,5 +7,7 @@ export class AuthService {
   constructor(private http: HttpClient) {
   }
 
-  
+  public userAuthentication(request){
+    return this.http.post("http://localhost:9192/authenticate", request, {responseType: 'text' as 'json'})
+  }
 }
