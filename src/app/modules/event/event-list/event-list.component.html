@@ -1,9 +1,8 @@
 <div class="wrapper">
   <div class="left-container"></div>
   <div class="mid-container">
-    <ul *ngFor="let event of events">
+    <ul *ngFor="let event of events; index as i">
       <div class="card-container" eventCardAnimation>
-
         <li class="card">
           <div class="circle-image">
             <img src="https://www.aal-europe.eu/wp-content/uploads/2013/04/events_medium.jpg" alt="">
