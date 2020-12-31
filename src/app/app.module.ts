@@ -9,6 +9,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {EventModule} from './modules/event/event.module';
 import {AuthModule} from './modules/auth/auth.module';
+import {CoreModule} from './modules/core/core.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {AuthModule} from './modules/auth/auth.module';
     AppRoutingModule,
     HttpClientModule,
     EventModule,
-    AuthModule
+    AuthModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
