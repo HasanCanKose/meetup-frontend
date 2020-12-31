@@ -4,11 +4,12 @@ import { HomeComponent } from './components/home/home.component';
 import { EventListComponent } from './modules/event/event-list/event-list.component';
 import {LoginComponent} from './modules/auth/login/login.component';
 import {RegisterComponent} from './modules/auth/register/register.component';
+import {AuthGuard} from './guards/auth.guard';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'events', component: EventListComponent },
+  { path: 'events', component: EventListComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent}
 ];
