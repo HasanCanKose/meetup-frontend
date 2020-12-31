@@ -10,4 +10,8 @@ export class AuthService {
   public userAuthentication(request){
     return this.http.post("http://localhost:8080/authenticate", request, {responseType: 'text' as 'json'})
   }
+
+  public loggedIn() {
+    return !!localStorage.getItem('token');
+  }
 }
