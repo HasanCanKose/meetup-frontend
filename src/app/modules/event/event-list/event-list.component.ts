@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EventsServices} from '../../../services/events.service';
 import {EventCard} from '../event-card';
+import {EventResponseModel} from '../models/event-response.model';
 
 @Component({
   selector: 'app-event-list',
@@ -8,12 +9,14 @@ import {EventCard} from '../event-card';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit{
-  public events: Array<EventCard> = [];
+  public events: EventResponseModel[] = [];
 
   constructor(private eventsService: EventsServices) { }
 
   ngOnInit() {
-    this.events = this.eventsService.getEventCards()
+    this.eventsService.getEvents().subscribe(res => {
+      this.events = res;
+    })
   }
 
   onClick() {
