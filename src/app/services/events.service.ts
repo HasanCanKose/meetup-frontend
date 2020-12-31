@@ -15,10 +15,6 @@ export class EventsServices {
 
 
   public getEvents(): Observable<EventResponseModel[]> {
-    return this.http.get<EventResponseModel[]>("http://localhost:8080/events", {
-      headers: {
-        Authorization: `Bearer ${this.authService.getToken()}`
-      }
-    });
+    return this.http.get<EventResponseModel[]>("http://localhost:8080/events");
   }
 }
