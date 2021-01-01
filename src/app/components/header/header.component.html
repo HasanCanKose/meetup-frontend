@@ -14,9 +14,9 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown" appDropdown>
+        <li class="dropdown" appDropdown *ngIf="user; else noUser">
           <a style="cursor: pointer" class="dropdown-toggle" role="button"
-          >{{user?.name}} {{user?.surname}} <span class="caret"></span
+          >{{user.name}} {{user.surname}} <span class="caret"></span
           ></a>
           <ul class="dropdown-menu">
             <li>
@@ -27,12 +27,14 @@
             </li>
           </ul>
         </li>
+        <ng-template #noUser>
         <li>
           <a style="cursor: pointer" routerLink="/login">Login</a>
         </li>
         <li>
           <a style="cursor: pointer" routerLink="/register">Register</a>
         </li>
+        </ng-template>
       </ul>
     </div>
   </div>
