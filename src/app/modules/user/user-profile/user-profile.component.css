@@ -1,0 +1,26 @@
+
+.left-content{
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  border: 1px solid green;
+  width: 60%;
+  position: absolute;
+}
+.right-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid blue;
+  width: 40%;
+  height: 300px;
+  position: fixed;
+  right: 1px;
+}
+
+.card{
+  box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem 4rem;
+  list-style: none;
+  width: 80%;
+}
