@@ -15,6 +15,10 @@ export class AuthService {
     return !!localStorage.getItem('token');
   }
 
+  public loggedOut(){
+    localStorage.removeItem('token');
+  }
+
   public getToken() {
     return localStorage.getItem('token');
   }

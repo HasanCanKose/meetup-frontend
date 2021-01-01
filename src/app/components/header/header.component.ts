@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {UserResponseModel} from '../../modules/user/models/user-response.model';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   user: UserResponseModel;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.userService.changedUser$.subscribe(user => {
@@ -19,4 +20,7 @@ export class HeaderComponent implements OnInit {
     })
   }
 
+  logout() {
+    this.authService.loggedOut();
+  }
 }

@@ -1,14 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {UserResponseModel} from '../modules/user/models/user-response.model';
-import {BehaviorSubject, ReplaySubject, Subject} from 'rxjs';
+import {ReplaySubject, Subject} from 'rxjs';
 import {tap} from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
 export class UserService{
 
   changedUser$ = new ReplaySubject<UserResponseModel>();
-
 
   constructor(private http: HttpClient) {
   }
@@ -19,8 +18,7 @@ export class UserService{
 
   getUser() {
     return this.http.get<UserResponseModel>("http://localhost:8080/users/get").pipe(tap((response: UserResponseModel) => {
-      this.changedUser$.next(response)
+      this.changedUser$.next(response);
     }))
-
   }
 }
