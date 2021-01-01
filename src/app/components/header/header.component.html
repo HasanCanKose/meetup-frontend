@@ -14,13 +14,13 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown" appDropdown *ngIf="user; else noUser">
+        <li class="dropdown" appDropdown *ngIf="authService.loggedIn(); else noUser">
           <a style="cursor: pointer" class="dropdown-toggle" role="button"
-          >{{user.name}} {{user.surname}} {{user.id}} <span class="caret"></span
+          >{{user?.name}} {{user?.surname}} <span class="caret"></span
           ></a>
           <ul class="dropdown-menu">
             <li>
-              <a style="cursor: pointer" [routerLink]="['/profile', user.id]" >Profile</a>
+              <a style="cursor: pointer" [routerLink]="['/profile', user?.id]" >Profile</a>
             </li>
             <li>
               <a style="cursor: pointer" (click)="logout()" >Logout</a>

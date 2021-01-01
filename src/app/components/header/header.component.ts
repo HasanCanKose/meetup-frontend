@@ -12,14 +12,14 @@ import {ActivatedRoute, Params} from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   user: UserResponseModel;
-  isAuthenticated: boolean;
 
-  constructor(private userService: UserService, private authService: AuthService, private route: ActivatedRoute) { }
+  constructor(private userService: UserService, public authService: AuthService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.userService.changedUser$.subscribe(user => {
       this.user = user;
     })
+    console.log(this.user);
 
   }
 
