@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {EventsServices} from '../../../services/events.service';
 import {EventResponseModel} from '../../event/models/event-response.model';
 import {UserService} from '../../../services/user.service';
 import {UserResponseModel} from '../models/user-response.model';
 import {FormControl, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -17,7 +18,7 @@ export class UserProfileComponent implements OnInit {
   events: EventResponseModel[] = [];
   user: UserResponseModel;
 
-  constructor(private eventsServices: EventsServices, private userService: UserService) { }
+  constructor(private eventsServices: EventsServices, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.createEventFrom = new FormGroup({
@@ -26,6 +27,7 @@ export class UserProfileComponent implements OnInit {
       place: new FormControl(null),
       date: new FormControl(null)
     })
+
     this.eventsServices.getUserEvents().subscribe(events => {
       this.events = events;
     })
@@ -42,5 +44,13 @@ export class UserProfileComponent implements OnInit {
       date: this.createEventFrom.get('date').value
     }
     this.eventsServices.createEvent(eventRequest).subscribe();
+    this.eventsServices.changedUserEvents$.subscribe(events => {
+      this.events = events;
+    })
+
+  }
+
+  onDeleteEvent(id: number) {
+    this.eventsServices.deleteEvent(id).subscribe();
   }
 }

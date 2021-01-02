@@ -7,6 +7,10 @@
         <h5>{{event.place}}</h5>
         <h5>{{event.date}}</h5>
         <h6>{{event.users}}</h6>
+        <div class="button">
+          <button class="btn btn-success">Update</button>
+          <button class="btn btn-danger" (click)="onDeleteEvent(event.id)">Delete</button>
+        </div>
       </li>
     </ul>
   </div>
