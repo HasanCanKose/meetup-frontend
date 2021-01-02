@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EventsServices} from '../../../services/events.service';
 import {EventCard} from '../event-card';
 import {EventResponseModel} from '../models/event-response.model';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-event-list',
@@ -11,12 +12,14 @@ import {EventResponseModel} from '../models/event-response.model';
 export class EventListComponent implements OnInit{
   public events: EventResponseModel[] = [];
 
-  constructor(private eventsService: EventsServices) { }
+  constructor(private route: ActivatedRoute) {
+    this.route.data.subscribe(events => {
+      this.events = events['events'];
+    });
+  }
 
   ngOnInit() {
-    this.eventsService.getEvents().subscribe(res => {
-      this.events = res;
-    })
+
   }
 
   onClick() {

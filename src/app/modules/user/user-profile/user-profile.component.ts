@@ -49,6 +49,8 @@ export class UserProfileComponent implements OnInit {
         date: this.createEventFrom.get('date').value
       }
       this.eventsServices.updateEvent(eventUpdateRequest).subscribe();
+      this.isUpdateMode = false;
+
     } else {
       let eventCreateRequest = {
         title: this.createEventFrom.get('title').value,
@@ -57,14 +59,21 @@ export class UserProfileComponent implements OnInit {
         date: this.createEventFrom.get('date').value
       }
       this.eventsServices.createEvent(eventCreateRequest).subscribe();
-      this.isUpdateMode = false;
+
+
+
     }
-    window.location.reload();
+
+    this.eventsServices.getUserEvents().subscribe(events => {
+      this.events = events;
+    });
   }
 
   onDeleteEvent(id: number) {
     this.eventsServices.deleteEvent(id).subscribe();
-    window.location.reload();
+    this.eventsServices.getUserEvents().subscribe(events => {
+      this.events = events;
+    });
 
   }
 
