@@ -87,10 +87,17 @@
   transform: translateX(0%);
 }
 
+.form-first-name input.is-invalid + .label-first-name .content-first-name,
+.form-last-name input.is-invalid + .label-last-name .content-last-name,
+.form-username input.is-invalid + .label-username .content-username,
+.form-email input.is-invalid + .label-email .content-email,
+.form-password input.is-invalid + .label-password .content-password,
+.form-confirm-password input.is-invalid + .label-confirm-password .content-confirm-password {
+  color: red;
+}
 
-/*.form-first-name input.ng-valid + .label::after{*/
-/*  transform: translateX(0%);*/
-/*}*/
+
+
 
 .form-button button{
   margin-top: 10px;

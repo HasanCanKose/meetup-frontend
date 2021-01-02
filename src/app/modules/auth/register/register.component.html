@@ -3,39 +3,69 @@
     <h1>Register</h1>
 
     <div class="form-first-name">
-      <input type="text" id="first-name" name="first" autocomplete="nope" formControlName="firstname">
+      <input [class.is-invalid] = "registerForm.get('firstname').invalid && registerForm.get('firstname').touched"
+             type="text"
+             id="first-name"
+             name="first"
+             autocomplete="nope"
+             formControlName="firstname">
       <label for="first-name" class="label-first-name">
         <span class="content-first-name">First Name</span>
       </label>
     </div>
     <div class="form-last-name">
-      <input type="text" id="last-name" name="last" autocomplete="nope" formControlName="lastname">
+      <input [class.is-invalid] = "registerForm.get('lastname').invalid && registerForm.get('lastname').touched"
+             type="text"
+             id="last-name"
+             name="last"
+             autocomplete="nope"
+             formControlName="lastname">
       <label for="last-name" class="label-last-name">
         <span class="content-last-name">Last Name</span>
       </label>
     </div>
     <div class="form-username">
-      <input type="text" id="username" name="username" autocomplete="nope" formControlName="username">
+      <input [class.is-invalid] = "registerForm.get('username').invalid && registerForm.get('username').touched"
+             type="text"
+             id="username"
+             name="username"
+             autocomplete="nope"
+             formControlName="username">
       <label for="username" class="label-username">
         <span class="content-username">Username</span>
       </label>
     </div>
 
     <div class="form-email">
-      <input type="text" id="email" name="email" autocomplete="off" formControlName="email">
+      <input [class.is-invalid] = "registerForm.get('email').invalid && registerForm.get('email').touched"
+             type="text"
+             id="email"
+             name="email"
+             autocomplete="off"
+             formControlName="email">
       <label for="email" class="label-email">
         <span class="content-email">Email</span>
       </label>
     </div>
 <!--    <span *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched"  class="help-block">Please enter a valid e-mail!</span>-->
     <div class="form-password">
-      <input type="text" id="password" name="password" autocomplete="off" formControlName="password">
+      <input [class.is-invalid] = "registerForm.get('password').invalid && registerForm.get('password').touched"
+             type="password"
+             id="password"
+             name="password"
+             autocomplete="off"
+             formControlName="password">
       <label for="password" class="label-password">
         <span class="content-password">Password</span>
       </label>
     </div>
     <div class="form-confirm-password">
-      <input type="text" id="confirm-password" name="confirm-password" autocomplete="off" formControlName="confirmPassword">
+      <input [class.is-invalid] = "registerForm.get('confirmPassword').invalid && registerForm.get('confirmPassword').touched"
+             type="password"
+             id="confirm-password"
+             name="confirm-password"
+             autocomplete="off"
+             formControlName="confirmPassword">
       <label for="confirm-password" class="label-confirm-password">
         <span class="content-confirm-password">Confirm Password</span>
       </label>
