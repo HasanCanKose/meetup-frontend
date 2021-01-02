@@ -10,6 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {EventModule} from './modules/event/event.module';
 import {AuthModule} from './modules/auth/auth.module';
 import {CoreModule} from './modules/core/core.module';
+import {UserModule} from './modules/user/user.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {CoreModule} from './modules/core/core.module';
     HttpClientModule,
     EventModule,
     AuthModule,
-    CoreModule
+    CoreModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {EventsServices} from '../../../services/events.service';
+import {EventResponseModel} from '../../event/models/event-response.model';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor() { }
+  events: EventResponseModel[] = [];
+
+  constructor(private eventsServices: EventsServices) { }
 
   ngOnInit(): void {
+    this.eventsServices.getUserEvents().subscribe(events => {
+      this.events = events;
+    })
   }
 
 }
