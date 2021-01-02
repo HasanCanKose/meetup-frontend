@@ -20,4 +20,8 @@ export class EventsServices {
   public getUserEvents(): Observable<EventResponseModel[]> {
     return this.http.get<EventResponseModel[]>("http://localhost:8080/events/user");
   }
+
+  public createEvent(request) {
+    return this.http.post("http://localhost:8080/events", request);
+  }
 }

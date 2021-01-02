@@ -8,9 +8,11 @@
   position: absolute;
 }
 .right-content {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   align-items: center;
   justify-content: center;
+  justify-items: center;
   border: 1px solid blue;
   width: 40%;
   height: 300px;
