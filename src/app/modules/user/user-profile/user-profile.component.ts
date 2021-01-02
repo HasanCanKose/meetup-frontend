@@ -35,6 +35,12 @@ export class UserProfileComponent implements OnInit {
   }
 
   onSubmit() {
-
+    let eventRequest = {
+      title: this.createEventFrom.get('title').value,
+      description: this.createEventFrom.get('description').value,
+      place: this.createEventFrom.get('place').value,
+      date: this.createEventFrom.get('date').value
+    }
+    this.eventsServices.createEvent(eventRequest).subscribe();
   }
 }
