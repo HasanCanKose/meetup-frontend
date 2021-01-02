@@ -17,6 +17,8 @@ export class UserProfileComponent implements OnInit {
 
   events: EventResponseModel[] = [];
   user: UserResponseModel;
+  isUpdateMode = false;
+  eventId: number;
 
   constructor(private eventsServices: EventsServices, private userService: UserService, private router: Router) { }
 
@@ -37,20 +39,40 @@ export class UserProfileComponent implements OnInit {
   }
 
   onSubmit() {
-    let eventRequest = {
-      title: this.createEventFrom.get('title').value,
-      description: this.createEventFrom.get('description').value,
-      place: this.createEventFrom.get('place').value,
-      date: this.createEventFrom.get('date').value
+
+    if(this.isUpdateMode) {
+      let eventUpdateRequest = {
+        id: this.eventId,
+        title: this.createEventFrom.get('title').value,
+        description: this.createEventFrom.get('description').value,
+        place: this.createEventFrom.get('place').value,
+        date: this.createEventFrom.get('date').value
+      }
+      this.eventsServices.updateEvent(eventUpdateRequest).subscribe();
+    } else {
+      let eventCreateRequest = {
+        title: this.createEventFrom.get('title').value,
+        description: this.createEventFrom.get('description').value,
+        place: this.createEventFrom.get('place').value,
+        date: this.createEventFrom.get('date').value
+      }
+      this.eventsServices.createEvent(eventCreateRequest).subscribe();
+      this.isUpdateMode = false;
     }
-    this.eventsServices.createEvent(eventRequest).subscribe();
-    this.eventsServices.changedUserEvents$.subscribe(events => {
-      this.events = events;
-    })
 
   }
 
   onDeleteEvent(id: number) {
     this.eventsServices.deleteEvent(id).subscribe();
+  }
+
+  onUpdateMode(id: number) {
+    const event = this.events.find(event => event.id === id);
+    this.eventId = event.id;
+    this.createEventFrom.get('title').patchValue(event.title);
+    this.createEventFrom.get('description').patchValue(event.description);
+    this.createEventFrom.get('place').patchValue(event.place);
+    this.createEventFrom.get('date').patchValue(event.date);
+    this.isUpdateMode = true;
   }
 }

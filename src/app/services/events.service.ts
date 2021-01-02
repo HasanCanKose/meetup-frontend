@@ -19,16 +19,18 @@ export class EventsServices {
   }
 
   public getUserEvents(): Observable<EventResponseModel[]> {
-    return this.http.get<EventResponseModel[]>("http://localhost:8080/events/user").pipe(tap(response => {
-      this.changedUserEvents$.next(response);
-    }))
+    return this.http.get<EventResponseModel[]>("http://localhost:8080/events/user");
   }
 
   public createEvent(request) {
-    return this.http.post("http://localhost:8080/events", request);
+    return this.http.post<EventResponseModel>("http://localhost:8080/events", request);
   }
 
   public deleteEvent(id: number){
     return this.http.delete(`http://localhost:8080/events/${id}`);
+  }
+
+  public updateEvent(request) {
+    return this.http.patch<EventResponseModel>("http://localhost:8080/events", request);
   }
 }

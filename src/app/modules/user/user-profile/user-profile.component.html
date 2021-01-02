@@ -8,7 +8,7 @@
         <h5>{{event.date}}</h5>
         <h6>{{event.users}}</h6>
         <div class="button">
-          <button class="btn btn-success">Update</button>
+          <button class="btn btn-success" (click)="onUpdateMode(event.id)">Update</button>
           <button class="btn btn-danger" (click)="onDeleteEvent(event.id)">Delete</button>
         </div>
       </li>
@@ -44,9 +44,14 @@
             <input type="text" id="date" class="form-control" formControlName="date">
           </div>
         </div>
-        <div class="col-xs-2">
+        <div class="col-xs-2" *ngIf="!isUpdateMode; else updateMode">
           <button type="submit" class="btn btn-primary">Create</button>
         </div>
+        <ng-template #updateMode>
+          <div class="col-xs-2">
+          <button type="submit" class="btn btn-success">Update</button>
+          </div>
+        </ng-template>
       </div>
     </form>
   </div>
