@@ -59,11 +59,13 @@ export class UserProfileComponent implements OnInit {
       this.eventsServices.createEvent(eventCreateRequest).subscribe();
       this.isUpdateMode = false;
     }
-
+    window.location.reload();
   }
 
   onDeleteEvent(id: number) {
     this.eventsServices.deleteEvent(id).subscribe();
+    window.location.reload();
+
   }
 
   onUpdateMode(id: number) {
