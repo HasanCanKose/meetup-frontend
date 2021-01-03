@@ -11,7 +11,6 @@ import { EventModule } from './modules/event/event.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { CoreModule } from './modules/core/core.module';
 import { UserModule } from './modules/user/user.module';
-import { EllipsisPipe } from './modules/shared/pipes/ellipsis.pipe';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, HomeComponent],
