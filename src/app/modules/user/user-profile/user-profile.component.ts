@@ -5,6 +5,7 @@ import {UserService} from '../../../services/user.service';
 import {UserResponseModel} from '../models/user-response.model';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-profile',
@@ -40,6 +41,7 @@ export class UserProfileComponent implements OnInit {
 
   onSubmit() {
 
+    let stream$;
     if(this.isUpdateMode) {
       let eventUpdateRequest = {
         id: this.eventId,
@@ -48,7 +50,7 @@ export class UserProfileComponent implements OnInit {
         place: this.createEventFrom.get('place').value,
         date: this.createEventFrom.get('date').value
       }
-      this.eventsServices.updateEvent(eventUpdateRequest).subscribe();
+      stream$ = this.eventsServices.updateEvent(eventUpdateRequest);
       this.isUpdateMode = false;
 
     } else {
@@ -58,23 +60,24 @@ export class UserProfileComponent implements OnInit {
         place: this.createEventFrom.get('place').value,
         date: this.createEventFrom.get('date').value
       }
-      this.eventsServices.createEvent(eventCreateRequest).subscribe();
+      stream$ = this.eventsServices.createEvent(eventCreateRequest);
 
 
 
     }
-
-    this.eventsServices.getUserEvents().subscribe(events => {
-      this.events = events;
+    stream$.subscribe(res => {
+      this.eventsServices.getUserEvents().subscribe(events => {
+        this.events = events;
+      });
     });
+
+    this.createEventFrom.reset();
   }
 
   onDeleteEvent(id: number) {
-    this.eventsServices.deleteEvent(id).subscribe();
-    this.eventsServices.getUserEvents().subscribe(events => {
-      this.events = events;
-    });
-
+    this.eventsServices.deleteEvent(id)
+      .pipe(switchMap(() => this.eventsServices.getUserEvents()))
+      .subscribe(events => this.events = events);
   }
 
   onUpdateMode(id: number) {
