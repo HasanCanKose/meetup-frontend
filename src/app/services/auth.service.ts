@@ -10,7 +10,9 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   public userAuthentication(request) {
-    return this.http.post<string>(`${this.apiUrl}/authenticate`, request, { responseType: 'text' as 'json' });
+    return this.http.post<string>(`${this.apiUrl}/authenticate`, request, {
+      responseType: 'text' as 'json',
+    });
   }
 
   public loggedIn() {
