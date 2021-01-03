@@ -29,8 +29,9 @@ export class EventListComponent implements OnInit {
     this.modalService.close$.subscribe(() => this.vc.clear());
   }
 
-  onClick() {
+  onClick(index: number) {
     const componentFactory = this.cfr.resolveComponentFactory(EventDetailComponent);
     this.vc.createComponent(componentFactory);
+    this.modalService.data$.next(this.events[index]);
   }
 }
