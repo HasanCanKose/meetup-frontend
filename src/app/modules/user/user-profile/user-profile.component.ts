@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {EventsServices} from '../../../services/events.service';
+import {EventService} from '../../../services/event.service';
 import {EventResponseModel} from '../../event/models/event-response.model';
 import {UserService} from '../../../services/user.service';
 import {UserResponseModel} from '../models/user-response.model';
@@ -21,7 +21,7 @@ export class UserProfileComponent implements OnInit {
   isUpdateMode = false;
   eventId: number;
 
-  constructor(private eventsServices: EventsServices, private userService: UserService, private router: Router) { }
+  constructor(private eventsServices: EventService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.createEventFrom = new FormGroup({

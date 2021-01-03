@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { EventCard } from '../modules/event/event-card';
+
 import {Observable, ReplaySubject, Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {EventResponseModel} from '../modules/event/models/event-response.model';
 import {AuthService} from './auth.service';
-import {tap} from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
-export class EventsServices {
+export class EventService {
   changedUserEvents$ = new ReplaySubject<EventResponseModel[]>();
 
   constructor(private http: HttpClient, private authService: AuthService) {
