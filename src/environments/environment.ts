@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://meetupp-app.herokuapp.com',
+  // apiUrl: 'http://localhost:8080',
+  apiUrl: 'https://meetupp-app.herokuapp.com',
 };
 
 /*
