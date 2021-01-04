@@ -32,4 +32,12 @@ export class EventService {
   public updateEvent(request) {
     return this.http.patch<EventResponseModel>(`${this.apiUrl}/events`, request);
   }
+
+  public addParticipant(request) {
+    return this.http.post<EventResponseModel>(`${this.apiUrl}/events/addParticipant`, request);
+  }
+
+  public removeParticipant(request) {
+    return this.http.post<EventResponseModel>(`${this.apiUrl}/events/removeParticipant`, request);
+  }
 }
