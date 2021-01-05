@@ -27,9 +27,12 @@
 @media screen and (max-width: 700px) {
   .wrapper{
     grid-template-columns: 1fr;
-    height: 50vh;
+    height: 70vh;
+  }
+  .content{
+    margin: 5px;
   }
   .image{
-    visibility: hidden;
+    display: none;
   }
 }
