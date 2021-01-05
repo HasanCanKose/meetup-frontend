@@ -104,3 +104,21 @@
   padding: 8px 32px;
   font-size: 16px;
 }
+
+@media screen and (max-width: 850px) {
+  .wrapper{
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 0;
+  }
+  .form-wrapper{
+    width: 100%;
+    height: auto;
+  }
+  .login-card{
+    width: 100%;
+  }
+  .register-wrapper{
+    display: none;
+  }
+}
