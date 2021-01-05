@@ -5,4 +5,6 @@ import { ReplaySubject, Subject } from 'rxjs';
 export class ModalService {
   close$ = new Subject<void>();
   data$ = new ReplaySubject<any>(1);
+  user$ = new ReplaySubject<any>(1);
+  event$ = new ReplaySubject<any>(1);
 }

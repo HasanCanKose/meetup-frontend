@@ -13,6 +13,8 @@ import { ModalService } from '../../../services/modal.service';
 })
 export class EventListComponent implements OnInit {
   public events: EventResponseModel[] = [];
+  index: number;
+  event: EventResponseModel;
   @ViewChild('vc', { static: true, read: ViewContainerRef }) vc: ViewContainerRef;
 
   constructor(
@@ -27,11 +29,16 @@ export class EventListComponent implements OnInit {
 
   ngOnInit() {
     this.modalService.close$.subscribe(() => this.vc.clear());
+    this.modalService.event$.subscribe((event) => {
+      this.event = event;
+      this.events.splice(this.index, 1, this.event);
+    });
   }
 
   onClick(index: number) {
     const componentFactory = this.cfr.resolveComponentFactory(EventDetailComponent);
     this.vc.createComponent(componentFactory);
     this.modalService.data$.next(this.events[index]);
+    this.index = index;
   }
 }
