@@ -1,10 +1,35 @@
 .wrapper{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  border: 1px solid green;
+  background-color: #E7E7E7;
+  margin: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
-
+.content{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+.content .content-item{
+  margin-bottom: 20px;
+}
+.btn {
+  padding: 16px 24px;
+  font-size: 16px;
+}
 .image img{
   max-width: 100%;
   height: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .wrapper{
+    grid-template-columns: 1fr;
+    height: 50vh;
+  }
+  .image{
+    visibility: hidden;
+  }
 }
