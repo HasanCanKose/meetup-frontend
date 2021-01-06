@@ -90,5 +90,8 @@ app-button{
     grid-template-columns: 1fr;
     align-items: center;
   }
+  .card-container{
+    width: 100%;
+  }
 
 }
