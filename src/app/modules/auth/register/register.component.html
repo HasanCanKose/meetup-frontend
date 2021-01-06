@@ -1,6 +1,6 @@
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
   <div class="form-wrapper">
-    <h1>Register</h1>
+    <h3>Register</h3>
 
     <div class="form-first-name">
       <input [class.is-invalid] = "registerForm.get('firstname').invalid && registerForm.get('firstname').touched"

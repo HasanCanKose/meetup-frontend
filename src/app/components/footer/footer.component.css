@@ -1,14 +1,12 @@
-
 .footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   background-color: #E7E7E7;
-  border-color: #E7E7E7;
   color: dimgrey;
   text-align: center;
   padding-top: 40px;
+  padding-bottom: 10px;
 }
 
 span{

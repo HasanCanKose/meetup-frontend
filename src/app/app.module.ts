@@ -12,11 +12,13 @@ import { AuthModule } from './modules/auth/auth.module';
 import { CoreModule } from './modules/core/core.module';
 import { UserModule } from './modules/user/user.module';
 import { FooterComponent } from './components/footer/footer.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, HomeComponent, FooterComponent],
   imports: [
     BrowserModule,
+    CommonModule,
     SharedModule,
     AppRoutingModule,
     HttpClientModule,
