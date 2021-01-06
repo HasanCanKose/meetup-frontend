@@ -2,6 +2,7 @@
   font-family: "Poppins", sans-serif;
   display: grid;
   grid-template-columns: 20% 60% 20%;
+
   perspective: 1000px;
 }
 .mid-container{
@@ -73,4 +74,21 @@ app-button{
 
 .info-animation{
   transform: translateZ(2px);
+}
+
+@media screen and (max-width: 1000px){
+  .wrapper{
+    grid-template-columns: 1fr;
   }
+  .left-container{
+    display: none;
+  }
+  .right-container{
+    display: none;
+  }
+  .mid-container{
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+}

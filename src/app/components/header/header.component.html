@@ -21,13 +21,13 @@
     </div>
 
 
-    <div class="navbar-collapse collapse" id="navbarNav" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
+    <div class="navbar-collapse collapse" id="navbarNav" [ngClass]="{'collapse': isCollapsed, 'navbar-collapse': true}">
       <ul class="nav navbar-nav">
         <li routerLinkActive="active">
-          <a routerLink="/home" (click)="toggleCollapsed()">Home</a>
+          <a routerLink="/home" (click)="onCollapse()">Home</a>
         </li>
         <li routerLinkActive="active">
-          <a routerLink="/events" (click)="toggleCollapsed()">Events</a>
+          <a routerLink="/events" (click)="onCollapse()">Events</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -37,7 +37,7 @@
           ></a>
           <ul class="dropdown-menu">
             <li>
-              <a style="cursor: pointer" [routerLink]="['/profile', user?.id]" >Profile</a>
+              <a style="cursor: pointer" [routerLink]="['/profile', user?.id]" (click)="onCollapse()">Profile</a>
             </li>
             <li>
               <a style="cursor: pointer" (click)="OnLogout()" >Logout</a>
@@ -46,10 +46,10 @@
         </li>
         <ng-template #noUser>
         <li>
-          <a style="cursor: pointer" routerLink="/login" (click)="toggleCollapsed()">Login</a>
+          <a style="cursor: pointer" routerLink="/login" (click)="onCollapse()">Login</a>
         </li>
         <li>
-          <a style="cursor: pointer" routerLink="/register" (click)="toggleCollapsed()">Register</a>
+          <a style="cursor: pointer" routerLink="/register" (click)="onCollapse()">Register</a>
         </li>
         </ng-template>
       </ul>

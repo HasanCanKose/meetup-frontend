@@ -4,6 +4,7 @@ import { UserResponseModel } from '../../modules/user/models/user-response.model
 import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ModalService } from '../../services/modal.service';
+import { StyleService } from '../../services/style.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ import { ModalService } from '../../services/modal.service';
 })
 export class HeaderComponent implements OnInit {
   user: UserResponseModel;
-  collapsed = true;
+  isCollapsed = true;
 
   constructor(
     private userService: UserService,
@@ -20,6 +21,7 @@ export class HeaderComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private modalService: ModalService,
+    private styleService: StyleService,
   ) {}
 
   ngOnInit(): void {
@@ -27,15 +29,23 @@ export class HeaderComponent implements OnInit {
       this.user = user;
       this.modalService.user$.next(this.user);
     });
-    console.log(this.user);
   }
 
   OnLogout() {
     this.authService.loggedOut();
     this.router.navigate(['/home']);
+    this.isCollapsed = !this.isCollapsed;
+    this.styleService.collapsed$.next(this.isCollapsed);
   }
 
   toggleCollapsed() {
-    this.collapsed = !this.collapsed;
+    this.isCollapsed = !this.isCollapsed;
+    this.styleService.collapsed$.next(this.isCollapsed);
+  }
+
+  onCollapse() {
+    this.isCollapsed = !this.isCollapsed;
+
+    this.styleService.collapsed$.next(true);
   }
 }
