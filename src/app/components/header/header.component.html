@@ -35,7 +35,7 @@
           <a style="cursor: pointer" class="dropdown-toggle" role="button"
           >{{user?.name}} {{user?.surname}} <span class="caret"></span
           ></a>
-          <ul class="dropdown-menu" (click)="onCollapse()">
+          <ul class="dropdown-menu">
             <li>
               <a style="cursor: pointer" [routerLink]="['/profile', user?.id]" (click)="onCollapse()">Profile</a>
             </li>

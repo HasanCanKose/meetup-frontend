@@ -9,11 +9,13 @@ import { StyleService } from '../../services/style.service';
 export class FooterComponent implements OnInit {
   isPage;
   isCollapsed;
+  isProfilePage;
   constructor(private styleService: StyleService) {}
 
   ngOnInit(): void {
     this.styleService.registerPage$.subscribe((res) => (this.isPage = res));
     this.styleService.eventPage$.subscribe((res) => (this.isPage = res));
+    this.styleService.profilePage$.subscribe((res) => (this.isProfilePage = res));
     this.styleService.collapsed$.subscribe((res) => (this.isCollapsed = res));
   }
 }
