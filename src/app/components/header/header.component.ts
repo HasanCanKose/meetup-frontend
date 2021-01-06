@@ -12,6 +12,7 @@ import { ModalService } from '../../services/modal.service';
 })
 export class HeaderComponent implements OnInit {
   user: UserResponseModel;
+  collapsed = true;
 
   constructor(
     private userService: UserService,
@@ -32,5 +33,9 @@ export class HeaderComponent implements OnInit {
   OnLogout() {
     this.authService.loggedOut();
     this.router.navigate(['/home']);
+  }
+
+  toggleCollapsed() {
+    this.collapsed = !this.collapsed;
   }
 }
