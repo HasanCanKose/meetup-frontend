@@ -7,9 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "predeploy": "ng build --prod --base-href 'https://hasancankose.github.io'",
-    "deploy": "ngh --dir=dist/meetup-app"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {

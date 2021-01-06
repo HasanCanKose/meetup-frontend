@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
       this.user = user;
       this.modalService.user$.next(this.user);
     });
-    this.styleService.collapsed$.next(false);
+    this.styleService.collapsed$.next(true);
   }
 
   OnLogout() {
@@ -47,6 +47,6 @@ export class HeaderComponent implements OnInit {
   onCollapse() {
     this.isCollapsed = !this.isCollapsed;
 
-    this.styleService.collapsed$.next(false);
+    this.styleService.collapsed$.next(this.isCollapsed);
   }
 }

@@ -37,7 +37,7 @@
           ></a>
           <ul class="dropdown-menu">
             <li>
-              <a style="cursor: pointer" routerLink="'/profile', user?.id" (click)="onCollapse()">Profile</a>
+              <a style="cursor: pointer" [routerLink]="['/profile', user?.id]" (click)="onCollapse()">Profile</a>
             </li>
             <li>
               <a style="cursor: pointer" (click)="OnLogout()" >Logout</a>
