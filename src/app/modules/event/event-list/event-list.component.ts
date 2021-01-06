@@ -42,6 +42,7 @@ export class EventListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.isEventPage = false;
+    this.styleService.eventPage$.next(this.isEventPage);
   }
 
   onClick(index: number) {
