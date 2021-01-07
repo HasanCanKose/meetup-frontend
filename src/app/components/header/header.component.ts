@@ -47,6 +47,6 @@ export class HeaderComponent implements OnInit {
   onCollapse() {
     this.isCollapsed = !this.isCollapsed;
 
-    this.styleService.collapsed$.next(this.isCollapsed);
+    this.styleService.collapsed$.next(true);
   }
 }
