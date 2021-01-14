@@ -32,6 +32,10 @@
   width: 50%;
 }
 
+.btn:focus{
+  outline: none;
+}
+
 @media screen and (max-width: 700px){
 
   .left-content{

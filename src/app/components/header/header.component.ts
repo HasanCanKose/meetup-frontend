@@ -35,6 +35,7 @@ export class HeaderComponent implements OnInit {
   OnLogout() {
     this.authService.loggedOut();
     this.router.navigate(['/home']);
+    this.isCollapsed = !this.isCollapsed;
     this.styleService.collapsed$.next(true);
   }
 
@@ -44,6 +45,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onCollapse() {
+    this.isCollapsed = !this.isCollapsed;
     this.styleService.collapsed$.next(true);
   }
 }
