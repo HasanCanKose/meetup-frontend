@@ -3,10 +3,10 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-gap: 16px;
   flex-direction: column;
   font-family: sans-serif;
   margin-bottom: 30px;
+  height: 100vh;
 }
 
 .form-email, .form-password, .form-first-name, .form-last-name, .form-confirm-password, .form-username{
